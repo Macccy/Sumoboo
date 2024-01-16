@@ -1,0 +1,44 @@
+<script>
+  const moveNames = {
+    'skillAname': 'Closer, Closer...',
+    'skillAdescription': 'Bagboo slashes the target, dealing <b><em>Physical dmg</em></b>.',
+    'skillBname': 'Swiftly Honed',
+    'skillBdescription': 'Increases Max <b><em>HP</em></b> of all Agents by <b><em><span style="color: #ffffff;">3%</span></em></b>.',
+    'skillCname': 'Ether Aptitude Enhance',
+    'skillCdescription': 'Boosts the Max <span style="color: #ffffff;"><b><em>HP/ATK/DEF</span></em></b> of Agents in battle by <b><em><span style="color: #ffffff;">16%/8%/16%</span></em></b> of the Bangboo\'s Max <b><em><span style="color: #ffffff;">HP/ATK/DEF</em></b></span>.',
+  };
+
+  function setMoveNames() {
+    for (const [id, moveName] of Object.entries(moveNames)) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.innerHTML = moveName;
+      }
+    }
+
+    // Skill A Table
+    const skillATable = document.getElementById('skillATable');
+    if (skillATable) {
+      skillATable.innerHTML = `
+        <table width="229">
+          <tbody>
+            <tr>
+              <td width="155">DMG Multiplier</td>
+              <td width="74">1214.0%</td>
+            </tr>
+            <tr>
+              <td width="155">Daze Multiplier</td>
+              <td width="74">86.0%</td>
+            </tr>
+            <tr>
+              <td width="155">Skill Activation Frequency</td>
+              <td width="74">4 times/min</td>
+            </tr>
+          </tbody>
+        </table>
+      `;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', setMoveNames);
+</script>
